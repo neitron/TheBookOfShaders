@@ -1,6 +1,8 @@
-# TheBookOfShaders
+# The Book Of Shaders
 Based on https://thebookofshaders.com/?lan=ru
+
 ----------
+
 ### Sci-Fi fire:<br/>
 ![Sci-fi](https://github.com/neitron/TheBookOfShaders/blob/master/fire.gif)
 
