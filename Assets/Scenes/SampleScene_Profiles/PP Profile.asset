@@ -15,6 +15,35 @@ MonoBehaviour:
   settings:
   - {fileID: 114252248751396752}
   - {fileID: 114767754524805130}
+  - {fileID: 114190756620216554}
+--- !u!114 &114190756620216554
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  focusDistance:
+    overrideState: 1
+    value: 3.22
+  aperture:
+    overrideState: 1
+    value: 6.19
+  focalLength:
+    overrideState: 1
+    value: 46.3
+  kernelSize:
+    overrideState: 0
+    value: 1
 --- !u!114 &114252248751396752
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -33,19 +62,19 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 150.5
+    value: 0.7
   threshold:
     overrideState: 1
-    value: 1.7
+    value: 1
   softKnee:
     overrideState: 1
-    value: 0.94
+    value: 1
   clamp:
     overrideState: 0
     value: 1e+25
   diffusion:
     overrideState: 1
-    value: 7.34
+    value: 6.01
   anamorphicRatio:
     overrideState: 0
     value: 0
@@ -132,8 +161,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   postExposure:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 2
   contrast:
     overrideState: 0
     value: 0
