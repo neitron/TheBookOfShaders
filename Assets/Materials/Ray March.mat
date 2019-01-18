@@ -64,22 +64,24 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Grid: 0
-    - _Metallic: 0.956
+    - _Metallic: 0.598
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Smoothness: 0.966
+    - _RimPower: 15
+    - _Smoothness: 0.919
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.059229266, g: 0.07871741, b: 0.103773594, a: 1}
     - _Color0: {r: 1, g: 1, b: 1, a: 1}
     - _Color1: {r: 1, g: 1, b: 1, a: 1}
     - _Color2: {r: 1, g: 1, b: 1, a: 1}
     - _Color3: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FireSettings: {r: 100, g: 0, b: 0.4, a: -1}
-    - _Settings: {r: 500, g: 0.0001, b: 0.4, a: 0.25}
+    - _RimColor: {r: 0.32941177, g: 1.7411765, b: 4, a: 1}
+    - _Settings: {r: 500, g: 0.0001, b: 0.67, a: 0.5}

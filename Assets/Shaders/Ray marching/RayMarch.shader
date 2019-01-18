@@ -7,6 +7,8 @@
 		_Color ("Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_Metallic ("Metalic", Float) = 0.2
 		_Smoothness("Smoothness", Float) = 0.2
+		
+		
 		//_Color2("Color 2", Color) = (1.0, 1.0, 1.0, 1.0)
 		//_Color3("Color 3", Color) = (1.0, 1.0, 1.0, 1.0)
 	}

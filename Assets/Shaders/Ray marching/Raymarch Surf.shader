@@ -7,6 +7,8 @@
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _Smoothness("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
+		[HDR]_RimColor("RimColor", Color) = (1.0, 1.0, 1.0, 1.0)
+		_RimPower("RimPower", Float) = 0.2
     }
     SubShader
     {
@@ -30,9 +32,8 @@
 			float3 viewDir;
         };
 
-        //half _Glossiness;
-        //half _Metallic;
-        //fixed4 _Color;
+		fixed4 _RimColor;
+		float _RimPower;
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -63,6 +64,10 @@
 				sceneSDF(p + zDir) - sceneSDF(p - zDir)));
 
 			o.Normal = norm;
+
+			// Rim
+			half rim = 1.0 - saturate(dot(viewDir, o.Normal));
+			o.Emission = _RimColor.rgb * pow(rim, _RimPower);
 
 			// Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;

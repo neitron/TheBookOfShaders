@@ -46,9 +46,16 @@ float sphereSDF(float3 p, float r)
 
 float roundBoxSDF( float3 p, float3 b, float r )
 {
-  float3 d = abs(p) - b;
-  return length(max(d,0.0)) - r
-         + min(max(d.x,max(d.y,d.z)),0.0); // remove this line for an only partially signed sdf 
+    float3 d = abs(p) - b;
+    return length(max(d, 0.0)) - r
+            + min(max(d.x, max(d.y, d.z)), 0.0); // remove this line for an only partially signed sdf 
+}
+
+
+float torusSDF( float3 p, float2 t )
+{
+    float2 q = float2(length(p.xz) - t.x, p.y);
+    return length(q) - t.y;
 }
 
 
@@ -59,10 +66,10 @@ float opSmoothUnion( float d1, float d2, float k )
 }
 
 
-float3 opTwist( float3 p )
+float3 opTwist( float3 p, float2 t )
 {
-    float c = cos(10.0 * p.y);
-    float s = sin(10.0 * p.y);
+    float c = cos(t.x * p.y);
+    float s = sin(t.y * p.y);
     float2x2 m = float2x2(c, -s, s, c);
     float3 q = float3(mul(m, p.xz), p.y);
     return q;
@@ -79,9 +86,26 @@ float3 opCheapBend( float3 p )
 }
 
 
+float3 rotateX(float3 p, float a)
+{
+    return mul(float3x3(1,0,0, 0,cos(a),-sin(a), 0,sin(a),cos(a)), p);
+}
+
+
 float sceneSDF(float3 p)
 {
-    float scene = opSmoothUnion( roundBoxSDF( opTwist(p), _Settings.z * 0.5, 0.1), sphereSDF(p - float3(sin(_Time.y) * 0.6, sin(_Time.y), 0) * 0.6, _Settings.z * 0.5 ), _Settings.w);
+    // twisted torus
+    // float scene = opSmoothUnion( roundBoxSDF( opTwist(p, sin(_Time.y) * 15.0f), _Settings.z * 0.5, 0.1), sphereSDF(p - float3(sin(_Time.y) * 0.6, sin(_Time.y), 0) * 0.6, _Settings.z * 0.5 ), _Settings.w);
+    
+    // twisted torus
+    //float3 r = rotateX(p, DEG_TO_RAD(90));
+    float3 t = opTwist(p, _SinTime.w * 15.0f);
+    float tor = torusSDF( t, float2(_Settings.z * 0.6, _Settings.z * 0.3));
+    float sph1 = sphereSDF( p - float3(_SinTime.w * _Settings.z, _CosTime.w * _Settings.z, 0), _Settings.z * 0.35 );
+    float sph2 = sphereSDF( p - float3(-_SinTime.w * _Settings.z, _CosTime.w * _Settings.z, 0), _Settings.z * 0.35 );
+    float scene = opSmoothUnion(tor, sph1, _Settings.w);
+    scene = opSmoothUnion(scene, sph2, _Settings.w);
+    
     return scene;
 }
 
@@ -106,6 +130,7 @@ float trace(float3 from, float3 direction, out float3 p)
 
 float _Smoothness;
 float _Metallic;
+
 
 fixed4 frag (v2f i) : SV_Target
 {
@@ -155,6 +180,7 @@ fixed4 frag (v2f i) : SV_Target
 		UNITY_PASS_TEXCUBE(unity_SpecCube0), unity_SpecCube0_HDR, envData
 	);
 
+    // Full Light
     return UNITY_BRDF_PBS(
 					albedo, specularTint,
 					oneMinusReflectivity, _Smoothness,
@@ -162,5 +188,7 @@ fixed4 frag (v2f i) : SV_Target
 					light, indirectLight
 				) * step( length(p), 100);
 
+    
+    // Just color
     return fixed4(finalColor, 1.0f);
 }

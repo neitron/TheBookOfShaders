@@ -1,3 +1,8 @@
+static const float PI = 3.14159265f;
+//static const float DEG_TO_RAD = 3.14159265f / 180.0f;
+
+#define DEG_TO_RAD(x) x * PI / 180.0f
+
 float plot(float arg, float f, float width)
 {
     return smoothstep(f - width, f, arg) - smoothstep(f, f  + width, arg);
