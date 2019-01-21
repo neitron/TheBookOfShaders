@@ -14,7 +14,7 @@
 
 ----------
 
-## Next part is based on https://thebookofshaders.com/?lan=ru
+### Next part is based on https://thebookofshaders.com/?lan=ru
 
 ### Sci-Fi fire:<br/>
 ![Sci-fi](https://github.com/neitron/TheBookOfShaders/blob/master/fire.gif)
