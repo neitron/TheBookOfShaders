@@ -66,6 +66,28 @@ float opSmoothUnion( float d1, float d2, float k )
 }
 
 
+float opSmoothSubtraction( float d1, float d2, float k ) 
+{
+    float h = clamp( 0.5f - 0.5f * (d2 + d1) / k, 0.0f, 1.0f );
+    return lerp( d2, -d1, h ) + k * h * (1.0f - h); 
+}
+
+
+float opSmoothIntersection( float d1, float d2, float k ) 
+{
+    float h = clamp( 0.5f - 0.5f * (d2 - d1) / k, 0.0f, 1.0f );
+    return lerp( d2, d1, h ) + k * h * (1.0f - h); 
+}
+
+
+float opDisplace( float q, float3 p, float4 d )
+{
+    float d1 = q;
+    float d2 = sin(d.x * p.x) * sin(d.y * p.y) * sin(d.z * p.z) * d.w;
+    return d1 + d2;
+}
+
+
 float3 opTwist( float3 p, float2 t )
 {
     float c = cos(t.x * p.y);
@@ -91,7 +113,7 @@ float3 rotateX(float3 p, float a)
     return mul(float3x3(1,0,0, 0,cos(a),-sin(a), 0,sin(a),cos(a)), p);
 }
 
-
+/*
 float sceneSDF(float3 p)
 {
     // twisted torus
@@ -192,3 +214,4 @@ fixed4 frag (v2f i) : SV_Target
     // Just color
     return fixed4(finalColor, 1.0f);
 }
+*/
