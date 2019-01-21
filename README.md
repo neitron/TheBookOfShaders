@@ -1,5 +1,5 @@
 # The Book Of Shaders
-Based on https://thebookofshaders.com/?lan=ru
+<img src="https://monosnap.com/image/4FGcDw6e3GleqRSlKlLnepQdtmwo7N.png">
 
 ----------
 
@@ -11,6 +11,10 @@ Based on https://thebookofshaders.com/?lan=ru
 <p float="left">
 <img src="https://github.com/neitron/TheBookOfShaders/blob/master/sdf.gif" alt="Raymarching" height="420" width="420">
 </p>
+
+----------
+
+## Next part is based on https://thebookofshaders.com/?lan=ru
 
 ### Sci-Fi fire:<br/>
 ![Sci-fi](https://github.com/neitron/TheBookOfShaders/blob/master/fire.gif)
