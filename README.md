@@ -4,9 +4,13 @@ Based on https://thebookofshaders.com/?lan=ru
 ----------
 
 ### Raymarching:<br/>
-<img src="https://github.com/neitron/TheBookOfShaders/blob/master/sdf_2.gif" alt="Raymarching" height="400" width="400">
-<img src="https://github.com/neitron/TheBookOfShaders/blob/master/waterSphere.gif" alt="Raymarching" height="400" width="400">
-<img src="https://github.com/neitron/TheBookOfShaders/blob/master/sdf.gif" alt="Raymarching" height="400" width="400">
+<p float="left">
+<img src="https://github.com/neitron/TheBookOfShaders/blob/master/sdf_2.gif" alt="Raymarching" height="420" width="420">
+<img src="https://github.com/neitron/TheBookOfShaders/blob/master/waterSphere.gif" alt="Raymarching" height="420" width="420">
+</p>
+<p float="left">
+<img src="https://github.com/neitron/TheBookOfShaders/blob/master/sdf.gif" alt="Raymarching" height="420" width="420">
+</p>
 
 ### Sci-Fi fire:<br/>
 ![Sci-fi](https://github.com/neitron/TheBookOfShaders/blob/master/fire.gif)
