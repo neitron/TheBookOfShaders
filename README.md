@@ -5,11 +5,11 @@
 
 ### Raymarching:<br/>
 <p float="left">
-<img src="https://github.com/neitron/TheBookOfShaders/blob/master/sdf_2.gif" alt="Raymarching" height="440" width="440">
-<img src="https://github.com/neitron/TheBookOfShaders/blob/master/waterSphere.gif" alt="Raymarching" height="440" width="440">
+<img src="https://github.com/neitron/TheBookOfShaders/blob/master/sdf_2.gif" alt="Raymarching" height="444" width="50%">
+<img src="https://github.com/neitron/TheBookOfShaders/blob/master/waterSphere.gif" alt="Raymarching" height="444" width="50%">
 </p>
 <p float="left">
-<img src="https://github.com/neitron/TheBookOfShaders/blob/master/sdf.gif" alt="Raymarching" height="440" width="440">
+<img src="https://github.com/neitron/TheBookOfShaders/blob/master/sdf.gif" alt="Raymarching" height="444" width="50%">
 </p>
 
 ----------
