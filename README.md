@@ -14,7 +14,7 @@
 
 ----------
 
-### Next part is based on https://thebookofshaders.com/?lan=ru
+Next part is based on https://thebookofshaders.com/?lan=ru
 
 ### Sci-Fi fire:<br/>
 <img src="https://github.com/neitron/TheBookOfShaders/blob/master/fire.gif" alt="Sci-fi" height="440" width="440">
