@@ -24,8 +24,3 @@ Next part is based on https://thebookofshaders.com/?lan=ru
 
 ### Perlin noise:<br/>
 <img src="https://github.com/neitron/TheBookOfShaders/blob/master/perlinNoise.gif" alt="Perlin noise" height="440" width="440">
-
-<div class="results">
-  <a href="https://github.com/neitron/TheBookOfShaders/blob/master/perlinNoise.gif" target="_blank"><img width="24%" src="https://github.com/neitron/TheBookOfShaders/blob/master/perlinNoise.gif" alt="result"></a>
-  <a href="https://github.com/neitron/TheBookOfShaders/blob/master/perlinNoise.gif" target="_blank"><img width="24%" src="https://github.com/neitron/TheBookOfShaders/blob/master/perlinNoise.gif" alt="result"></a>
-</div>
